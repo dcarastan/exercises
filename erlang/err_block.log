@@ -1,0 +1,14 @@
+| Block start
+blah blah
+blah 2
+    | ERROR: Failure
+    Error 1 message
+    | ERROR: Success
+    Error success message
+    | ERROR: Failure
+    Error 2 message
+    is a long message
+ | Block start
+ super-blah
+    | ERROR: Failure
+    Error 3 message

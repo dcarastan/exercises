@@ -1,0 +1,39 @@
+Processing word list ...
+elapsed time: 77665.157795 ms
+Anagrams chains longer than 2: [['abmhos', 'abohms', 'absmho', 'absohm'], ['aboard', 'aborad', 'abroad'], ['accouters', 'accoutres', 'acusector'], ['accrues', 'accurse', 'accuser'], ['aeolian', 'aeolina', 'aeonial']]
+Longest anagram chain: ['abmhos', 'abohms', 'absmho', 'absohm']
+Wrote profile results to anagrams2.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 58.4145 s
+File: anagrams2.py
+Function: anagram_check at line 16
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    16                                           @profile
+    17                                           def anagram_check(words):
+    18                                               """ Anagram checker
+    19                                           
+    20                                                   words - list of words to process
+    21                                               """
+    22         1            4      4.0      0.0      anagrams = [[words[0]]]
+    23                                           
+    24      5000         3273      0.7      0.0      for i in range(1, len(words)):
+    25                                                   # Check to see if we have the word in the anagrams list
+    26      4999         2988      0.6      0.0          found = False
+    27      4999         8412      1.7      0.0          word1 = list(words[i])
+    28                                           
+    29  12264913      6894826      0.6     11.8          for anagram in anagrams:
+    30  12259914     19005848      1.6     32.5              word2 = list(anagram[0])
+    31                                           
+    32  12259914     32488602      2.6     55.6              if sorted(word1) == sorted(word2):
+    33        90          185      2.1      0.0                  anagram.append(words[i])
+    34        90           71      0.8      0.0                  found = True
+    35                                           
+    36      4999         2863      0.6      0.0          if not found:
+    37                                                       # Start a new list for it
+    38      4909         7476      1.5      0.0              anagrams.append([words[i]])
+    39                                           
+    40         1            1      1.0      0.0      return anagrams
+

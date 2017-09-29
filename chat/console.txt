@@ -1,0 +1,101 @@
+Mini:oracle doru$ ls
+c1/             c2/             c3/             chat_client.py* chat_server.py*
+Mini:oracle doru$ ./chat_server.py
+Chat server started on 127.0.0.1:5000
+Connected with client ('127.0.0.1', 63528)
+Connected with client ('127.0.0.1', 63529)
+Connected with client ('127.0.0.1', 63530)
+DEBUG: client ('127.0.0.1', 63530) is offline
+DEBUG: client ('127.0.0.1', 63530) is offline
+DEBUG: client ('127.0.0.1', 63530) is offline
+
+
+Mini:c1 doru$ ../chat_client.py localhost 5000
+2016-08-18 20:13:42,574 log DEBUG Client started
+Welcome to the chat server localhost:5000. Type '/quit' to exit
+('localhost', 5000):
+('127.0.0.1', 63529) entered our chatting room
+('127.0.0.1', 63530) entered our chatting room
+('localhost', 5000): Hello world
+('localhost', 5000): こんにちは
+('localhost', 5000): You went on vacation ?
+('localhost', 5000):
+('127.0.0.1', 63529): Yes. I should share pictures.
+('localhost', 5000): Please do. I have a meeting to go to.
+('localhost', 5000): bye
+('localhost', 5000): .
+('localhost', 5000) Session:
+----------------------------
+('127.0.0.1', 63529) entered our chatting room
+('127.0.0.1', 63530) entered our chatting room
+('localhost', 5000):
+('localhost', 5000): Hello world
+('localhost', 5000): こんにちは
+('localhost', 5000): You went on vacation ?
+('127.0.0.1', 63529): Yes. I should share pictures.
+('localhost', 5000):
+('localhost', 5000): Please do. I have a meeting to go to.
+('localhost', 5000): bye
+('localhost', 5000): .
+Mini:c1 doru$
+
+
+Mini:c2 doru$ ../chat_client.py localhost 5000
+2016-08-18 20:13:54,788 log DEBUG Client started
+Welcome to the chat server localhost:5000. Type '/quit' to exit
+('localhost', 5000):
+('127.0.0.1', 63530) entered our chatting room
+('127.0.0.1', 63528): Hello world
+('127.0.0.1', 63528): こんにちは
+('127.0.0.1', 63528): You went on vacation ?
+('localhost', 5000): Yes. I should share pictures.
+('localhost', 5000):
+('127.0.0.1', 63528): Please do. I have a meeting to go to.
+('127.0.0.1', 63528): bye
+Client ('127.0.0.1', 63530) is offline
+Client ('127.0.0.1', 63530) is offline
+('localhost', 5000): .
+('localhost', 5000) Session:
+----------------------------
+('127.0.0.1', 63530) entered our chatting room
+('127.0.0.1', 63528): Hello world
+('127.0.0.1', 63528): こんにちは
+('127.0.0.1', 63528): You went on vacation ?
+('localhost', 5000):
+('localhost', 5000): Yes. I should share pictures.
+('127.0.0.1', 63528): Please do. I have a meeting to go to.
+('127.0.0.1', 63528): bye
+Client ('127.0.0.1', 63530) is offline
+Client ('127.0.0.1', 63530) is offline
+('localhost', 5000):
+('localhost', 5000): .
+Mini:c2 doru$
+
+
+Mini:c3 doru$ ../chat_client.py localhost 5000
+2016-08-18 20:14:03,762 log DEBUG Client started
+Welcome to the chat server localhost:5000. Type '/quit' to exit
+('localhost', 5000):
+('127.0.0.1', 63528): Hello world
+('127.0.0.1', 63528): こんにちは
+('127.0.0.1', 63528): You went on vacation ?
+('127.0.0.1', 63529): Yes. I should share pictures.
+('127.0.0.1', 63528): Please do. I have a meeting to go to.
+('127.0.0.1', 63528): bye
+Client ('127.0.0.1', 63530) is offline
+('localhost', 5000): .
+('localhost', 5000) Session:
+----------------------------
+('127.0.0.1', 63528): Hello world
+('127.0.0.1', 63528): こんにちは
+('127.0.0.1', 63528): You went on vacation ?
+('127.0.0.1', 63529): Yes. I should share pictures.
+('127.0.0.1', 63528): Please do. I have a meeting to go to.
+('127.0.0.1', 63528): bye
+Client ('127.0.0.1', 63530) is offline
+('localhost', 5000):
+('localhost', 5000): .
+Mini:c3 doru$
+
+
+
