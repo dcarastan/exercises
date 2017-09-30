@@ -1,0 +1,3 @@
+09:05:26 Something happened EXCEPTION Health RecommendationEngine
+09:05:26 Analyzing activity for user X INFO Health RecommendationEngine
+10:15:07 Alert sent to user X EXCEPTION Health AlertEngine
